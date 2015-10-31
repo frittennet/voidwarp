@@ -1,0 +1,5 @@
+name: VoidWarp
+main: ch.toothwit.voidwarp.main.VoidWarp
+version: 0.1
+author: Houston9000, fredo121, NICK5678
+description: Void Warp Plugin
