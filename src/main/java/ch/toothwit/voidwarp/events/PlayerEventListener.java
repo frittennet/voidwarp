@@ -11,8 +11,8 @@ import ch.toothwit.voidwarp.main.Settings;
 
 public class PlayerEventListener implements Listener {
 	@EventHandler
-    public void onWeatherChange(EntityDamageEvent event) {
-        if (event.getEntityType() == EntityType.PLAYER) {
+    public void onEntityDamage(EntityDamageEvent event) {
+        if (event.getEntityType() == EntityType.PLAYER && event.getCause() == EntityDamageEvent.DamageCause.VOID) {
             Player p = (Player)event.getEntity();
             p.teleport(Settings.get().getWarpLocation());
         }
