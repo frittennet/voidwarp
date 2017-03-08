@@ -14,10 +14,12 @@ public class Settings {
 	}
 	
 	public Settings() { 
-		this.warpLoc = VoidWarp.get().getServer().getWorld("lobby").getSpawnLocation();  
+	    this.warpLoc = VoidWarp.get().getServer().getWorld("lobby").getSpawnLocation(); 
 	} 
 	
 	public Location getWarpLocation() {
-		return this.warpLoc; 
+	    this.warpLoc = VoidWarp.get().getServer().getWorld("lobby").getSpawnLocation(); 
+	    
+	    return this.warpLoc; 
 	} 
 }

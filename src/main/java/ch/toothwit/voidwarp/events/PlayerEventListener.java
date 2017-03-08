@@ -1,6 +1,7 @@
 package ch.toothwit.voidwarp.events;
 
 
+import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -13,8 +14,10 @@ public class PlayerEventListener implements Listener {
 	@EventHandler
     public void onEntityDamage(EntityDamageEvent event) {
         if (event.getEntityType() == EntityType.PLAYER && event.getCause() == EntityDamageEvent.DamageCause.VOID) {
-            Player p = (Player)event.getEntity();
-            p.teleport(Settings.get().getWarpLocation());
+            Player p = (Player)event.getEntity(); 
+            Location l = Settings.get().getWarpLocation(); 
+            l.add(0.5, 0.5, 0.5); 
+            p.teleport(l); 
         }
     }
 }
